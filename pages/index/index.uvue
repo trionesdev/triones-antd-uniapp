@@ -4,6 +4,7 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 			<ant-button></ant-button>
+			<ant-input></ant-input>
 		</view>
 	</view>
 </template>
