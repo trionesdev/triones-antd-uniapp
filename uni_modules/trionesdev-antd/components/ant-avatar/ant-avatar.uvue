@@ -1,6 +1,6 @@
 <template>
-	<view class="">
-		<input />
+	<view>
+		
 	</view>
 </template>
 
@@ -17,9 +17,6 @@
 	}
 </script>
 
-<style lang="scss">
-$inputCls:'triones-antm-input';
-.#{$inputCls}{
-	
-}
+<style>
+
 </style>

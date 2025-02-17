@@ -5,8 +5,23 @@
 			"style": {
 				"navigationBarTitleText": "uni-app x"
 			}
+		},
+		{
+			"path" : "pages/button-page/button-page",
+			"style" : 
+			{
+				"navigationBarTitleText" : "Button"
+			}
+		},
+		{
+			"path" : "pages/input-page/input-page",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
 		}
 	],
+
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app x",

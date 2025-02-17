@@ -3,8 +3,10 @@
 		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
 			<text class="title">{{title}}</text>
-			<ant-button></ant-button>
-			<ant-input></ant-input>
+		</view>
+		<view style="display: inline-flex;gap: 8px;">
+			<navigator url="/pages/button-page/button-page"><button size="mini" >Button</button></navigator>
+			<button size="mini" click="inputClick">Input</button>
 		</view>
 	</view>
 </template>
@@ -20,7 +22,9 @@
 
 		},
 		methods: {
-
+			inputClick:()=>{
+				console.log("ssss")
+			}
 		}
 	}
 </script>

@@ -1,12 +1,23 @@
 <template>
-	<button>sss</button>
+	<button>
+		<slot></slot>
+	</button>
 </template>
 
-<script>
+<script lang="uts">
 	export default {
 		data() {
 			return {
 				
+			}
+		},
+		props:{
+			type: {
+				type: String,
+				default:'default',
+				validator:function(value){
+					return ['default','primary'].includes(value);
+				}
 			}
 		},
 		methods: {
@@ -15,6 +26,6 @@
 	}
 </script>
 
-<style>
-
+<style lang="scss">
+$buttonCls:'triones-antm-button';
 </style>
