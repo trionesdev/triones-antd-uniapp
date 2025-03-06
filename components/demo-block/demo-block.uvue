@@ -1,0 +1,39 @@
+<template>
+	<view class="codeBlock">
+		<view class="codeBlocktitle">{{title}}</view>
+		<view class="codeBlockContent"><slot></slot></view>
+	</view>
+</template>
+
+<script>
+	export default {
+		name:'DemoBlock',
+		data() {
+			return {
+				
+			}
+		},
+		props:{
+			title:{
+				type:String
+			}
+		},
+		methods: {
+			
+		}
+	}
+</script>
+
+<style lang="scss">
+	.codeBlock{
+		&title{
+			padding: 8px;
+			background-color: #f8f8f8;
+			text-align: center;
+		}
+		&Content{
+			display: block;
+			padding: 8px;
+		}
+	}
+</style>

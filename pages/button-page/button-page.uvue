@@ -1,6 +1,26 @@
 <template>
 	<view>
-		<ant-button>Default</ant-button>
+		<demo-block title="基本使用">
+			<view style="flex-direction: row;gap: 8px;">
+				<ant-button type="primary">Primary</ant-button>
+				<ant-button type="default">Default</ant-button>
+				<ant-button type="dashed">Dashed</ant-button>
+				<ant-button type="text">Text</ant-button>
+				<ant-button type="link">Link</ant-button>
+			</view>
+		</demo-block>
+		<demo-block title="颜色与变体">
+			<view style="flex-direction: row;gap: 8px;">
+				<view style="flex-direction: row;gap: 8px;">
+					<ant-button color="default" variant="solid">Solid</ant-button>
+					<ant-button color="default" variant="outlined">Outlined</ant-button>
+					<ant-button color="default" variant="dashed">Dashed</ant-button>
+					<ant-button color="default" variant="filled">Filled</ant-button>
+					<ant-button color="default" variant="text">Text</ant-button>
+					<ant-button color="default" variant="link">Link</ant-button>
+				</view>
+			</view>
+		</demo-block>
 	</view>
 </template>
 
