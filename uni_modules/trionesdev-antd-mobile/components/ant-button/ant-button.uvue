@@ -1,0 +1,148 @@
+<template>
+	<button :class="[
+		`${clsPrefix}`,
+		{
+			[`${clsPrefix}-block`]:block,
+			[`${clsPrefix}-color-${finalColor}`]:finalColor,
+			[`${clsPrefix}-variant-${finalVariant}`]:finalVariant,
+		}]" :disabled="disabled">
+		<slot></slot>
+	</button>
+</template>
+
+<script lang="uts" setup>
+	const clsPrefix = "triones-antm-button";
+	const { block = false, color, danger = false, disabled, ghost, type = "default", variant } = defineProps<{
+		block ?: boolean,
+		color ?: 'default' | 'primary' | 'danger',
+		danger ?: boolean,
+		disabled ?: boolean,
+		ghost ?: boolean,
+		type ?: 'primary' | 'dashed' | 'link' | 'text' | 'default',
+		variant ?: 'outlined' | 'dashed' | 'solid' | 'text' | 'link',
+	}>()
+
+	const finalColor = computed(() => {
+		let finalColor : any = color
+		if (type) {
+			if (!color) {
+				if (type === 'primary' || type === 'link') {
+					finalColor = 'primary'
+				} else if (type === 'default') {
+					finalColor = 'default'
+				}
+			}
+		}
+		if (danger) {
+			finalColor = 'danger'
+		}
+		return finalColor
+	});
+	const finalVariant = computed(() => {
+		let finalVariant = variant
+		if (type) {
+			if (!variant) {
+				if (type === 'primary') {
+					finalVariant = 'solid'
+				} else if (type === 'default') {
+					finalVariant = 'outlined'
+				} else if (type === 'dashed' || type === 'link' || type === 'text') {
+					finalVariant = type
+				}
+			}
+
+		}
+		return finalVariant;
+	});
+</script>
+
+<style lang="scss">
+	$buttonCls: 'triones-antm-button';
+
+	.#{$buttonCls} {
+		background-color: transparent;
+
+		&::after {
+			content: none;
+
+		}
+
+		position: relative;
+		display: inline-flex;
+		flex-direction: column;
+		justify-self: center;
+		align-items: center;
+		height: auto;
+		line-height: normal;
+		padding: 7px 12px;
+		border-radius: 4px;
+		border: 1px none;
+		box-sizing: border-box;
+		font-size: 14px;
+		z-index: 2;
+
+		&:active {
+			filter: brightness(92%);
+		}
+
+		&[disabled] {
+			opacity: 0.4;
+
+			&:active {
+				filter: none;
+			}
+		}
+
+		&-color {
+			&-default {
+				background-color: black;
+				color: black;
+				border: #000000 1px solid;
+			}
+
+			&-primary {
+				background-color: #1677ff;
+				color: #1677ff;
+				border: #1677ff 1px solid;
+			}
+
+			&-danger {
+				color: #ff4d4f;
+				background-color: #ff4d4f;
+				border: #ff4d4f 1px solid;
+			}
+		}
+
+		&-variant {
+			&-solid {
+				color: #ffffff;
+			}
+
+			&-outlined {
+				background-color: #ffffff;
+			}
+
+			&-dashed {
+				background-color: #ffffff;
+				border-style: dashed;
+			}
+
+
+			&-text {
+				background-color: #ffffff;
+				border: 0;
+			}
+
+			&-link {
+				background-color: #ffffff;
+				border: 0;
+			}
+		}
+
+		&-block {
+			display: flex;
+			width: 100%;
+		}
+
+	}
+</style>

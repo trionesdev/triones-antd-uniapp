@@ -1,10 +1,11 @@
 {
-  "id": "trionesdev-antd",
-  "displayName": "trionesdev-antd",
+  "id": "trionesdev-antd-mobile",
+  "name":"@trionesdev/antd-mobile-uniapp",
+  "displayName": "trionesdev-antd-mobile",
   "version": "1.0.0",
-  "description": "trionesdev-antd",
+  "description": "trionesdev-antd-mobile",
   "keywords": [
-    "trionesdev-antd"L
+    "trionesdev-antd-mobile"
 ],
   "repository": "",
   "engines": {
