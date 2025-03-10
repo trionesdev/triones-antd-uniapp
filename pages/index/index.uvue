@@ -19,7 +19,7 @@
 			}
 		},
 		onLoad() {
-
+			
 		},
 		methods: {
 			inputClick:()=>{

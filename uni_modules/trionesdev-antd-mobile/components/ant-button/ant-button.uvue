@@ -57,6 +57,7 @@
 </script>
 
 <style lang="scss">
+	@import "../../style/variable.scss";
 	$buttonCls: 'triones-antm-button';
 
 	.#{$buttonCls} {
@@ -75,7 +76,7 @@
 		height: auto;
 		line-height: normal;
 		padding: 7px 12px;
-		border-radius: 4px;
+		border-radius: $borderRaduis;
 		border: 1px none;
 		box-sizing: border-box;
 		font-size: 14px;
@@ -101,15 +102,15 @@
 			}
 
 			&-primary {
-				background-color: #1677ff;
-				color: #1677ff;
-				border: #1677ff 1px solid;
+				background-color: $colorPrimary;
+				color: $colorPrimary;
+				border: $colorPrimary 1px solid;
 			}
 
 			&-danger {
-				color: #ff4d4f;
-				background-color: #ff4d4f;
-				border: #ff4d4f 1px solid;
+				color: $colorDanger;
+				background-color: $colorDanger;
+				border: $colorDanger 1px solid;
 			}
 		}
 
