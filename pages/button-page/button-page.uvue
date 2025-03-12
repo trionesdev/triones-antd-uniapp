@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<demo-block title="基本使用">
-			<view style="flex-direction: row;gap: 8px;flex-wrap: wrap;">
+			<view style="flex-direction: row;gap: 8;flex-wrap: wrap;">
 				<ant-button type="primary">Primary</ant-button>
 				<ant-button type="default">Default</ant-button>
 				<ant-button type="dashed">Dashed</ant-button>
@@ -27,7 +27,7 @@
 					<ant-button color="primary" variant="text">Text</ant-button>
 					<ant-button color="primary" variant="link">Link</ant-button>
 				</view>
-				<view style="flex-direction: row;gap: 8px;flex-wrap: wrap;">
+				<view style="flex-direction: row;gap: 8;flex-wrap: wrap;">
 					<ant-button color="danger" variant="solid">Solid</ant-button>
 					<ant-button color="danger" variant="outlined">Outlined</ant-button>
 					<ant-button color="danger" variant="dashed">Dashed</ant-button>
@@ -38,20 +38,20 @@
 			</view>
 		</demo-block>
 		<demo-block title="块级元素">
-			<view style="flex-direction: row;gap: 8px;flex-wrap: wrap;">
+			<view style="flex-direction: row;gap: 8;flex-wrap: wrap;">
 				<ant-button :block="true" type="primary">按钮</ant-button>
 				<ant-button :block="true" color="primary">按钮</ant-button>
 			</view>
 		</demo-block>
 		<demo-block title="禁用">
-			<view style="flex-direction: row;gap: 8px;flex-wrap: wrap;">
+			<view style="flex-direction: row;gap: 8;flex-wrap: wrap;">
 				<ant-button type="primary" :disabled="true">主要按钮</ant-button>
 				<ant-button type="default" :disabled="true">次要按钮</ant-button>
 				<ant-button type="text" :disabled="true">文本按钮</ant-button>
 			</view>
 		</demo-block>
 		<demo-block title="危险">
-			<view style="flex-direction: row;gap: 8px;flex-wrap: wrap;">
+			<view style="flex-direction: row;gap: 8;flex-wrap: wrap;">
 				<ant-button type="primary" :danger="true">主要按钮</ant-button>
 				<ant-button type="default" :danger="true">次要按钮</ant-button>
 				<ant-button type="text" :danger="true">文本按钮</ant-button>

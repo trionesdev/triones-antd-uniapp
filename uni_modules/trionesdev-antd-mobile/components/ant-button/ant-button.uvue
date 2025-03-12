@@ -12,15 +12,45 @@
 
 <script lang="uts" setup>
 	const clsPrefix = "triones-antm-button";
-	const { block = false, color, danger = false, disabled, ghost, type = "default", variant } = defineProps<{
-		block ?: boolean,
-		color ?: 'default' | 'primary' | 'danger',
-		danger ?: boolean,
-		disabled ?: boolean,
-		ghost ?: boolean,
-		type ?: 'primary' | 'dashed' | 'link' | 'text' | 'default',
-		variant ?: 'outlined' | 'dashed' | 'solid' | 'text' | 'link',
-	}>()
+
+	const { block = false, color, danger = false, disabled, ghost, type = "default", variant } = defineProps({
+		block: {
+			type: Boolean,
+			default: false
+		},
+		color: {
+			type: String,
+			validator(value) {
+				return ['default', 'primary', 'danger'].includes(value)
+			}
+		},
+		danger: {
+			type: Boolean,
+			default: false
+		},
+		disabled: {
+			type: Boolean,
+			default: false
+		},
+		ghost: {
+			type: Boolean,
+			default: false
+		},
+		type: {
+			type: String,
+			default: 'default',
+			validator(value) {
+				return ['primary', 'dashed', 'link', 'text', 'default'].includes(value)
+			}
+		},
+		variant: {
+			type: String,
+			validator(value) {
+				return ['outlined', 'dashed', 'solid', 'text', 'link'].includes(value)
+			}
+		}
+	})
+
 
 	const finalColor = computed(() => {
 		let finalColor : any = color

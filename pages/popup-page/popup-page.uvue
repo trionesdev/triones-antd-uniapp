@@ -1,0 +1,45 @@
+<template>
+	<!-- #ifdef APP -->
+	<scroll-view style="flex:1">
+	<!-- #endif -->
+		<demo-block title="基本使用">
+			<ant-popup :open="topOpen" position="top" @close="topOpen =false">
+				<view :style="{height: '400px'}">
+					顶部弹出
+				</view>
+			</ant-popup>
+			<ant-button :block="true" @click="()=>{topOpen = true}"> 顶部弹出</ant-button>
+			<ant-popup :open="bottomOpen" @close="bottomOpen=false">
+				<view :style="{height: '400px'}">
+					底部弹出
+				</view>
+			</ant-popup>
+			<ant-button :block="true" @click="bottomOpen = true">底部弹出</ant-button>
+			<ant-popup :open="leftOpen" position="left" @close="leftOpen=false">
+				<view :style="{width: '400px'}">
+					左侧弹出
+				</view>
+			</ant-popup>
+			<ant-button :block="true" @click="leftOpen = true">左侧弹出</ant-button>
+			<ant-popup :open="rightOpen" position="right" @close="rightOpen=false">
+				<view :style="{width: '400px'}">
+					右侧弹出
+				</view>
+			</ant-popup>
+			<ant-button :block="true" @click="rightOpen = true">右侧弹出</ant-button>
+		</demo-block>
+	<!-- #ifdef APP -->
+	</scroll-view>
+	<!-- #endif -->
+</template>
+
+<script setup lang="uts">
+	const topOpen = ref(false)
+	const bottomOpen = ref(false)
+	const leftOpen = ref(false)
+	const rightOpen = ref(false)
+</script>
+
+<style>
+
+</style>

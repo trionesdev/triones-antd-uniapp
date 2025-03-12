@@ -19,6 +19,20 @@
 			{
 				"navigationBarTitleText" : ""
 			}
+		},
+		{
+			"path" : "pages/modal-page/modal-page",
+			"style" : 
+			{
+				"navigationBarTitleText" : "Modal"
+			}
+		},
+		{
+			"path" : "pages/popup-page/popup-page",
+			"style" : 
+			{
+				"navigationBarTitleText" : "Popup"
+			}
 		}
 	],
 

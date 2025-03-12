@@ -1,0 +1,96 @@
+<template>
+	<view v-if="open" :class="[`${popupCls}`]" :style="{zIndex:zIndex}">
+		<view :class="[`${popupCls}-mask`]" @click="handleClose"></view>
+		<view :class="[`${popupCls}-body`, `${popupCls}-${position}`]">
+			<slot></slot>
+		</view>
+
+	</view>
+</template>
+
+<script setup lang="uts">
+	const popupCls = "triones-antm-popup";
+	const { open, position, zIndex, overlayClosable } = defineProps({
+		open: {
+			type: Boolean,
+			default: false
+		},
+		position: {
+			type: String,
+			default: 'bottom',
+			validator(value) {
+				return ["top", "bottom", "left", "right"].includes(value)
+			}
+		},
+		zIndex: {
+			type: Number,
+			default: 1000
+		},
+		overlayClosable: {
+			type: Boolean,
+			default: true
+		}
+	})
+
+	const emit = defineEmits(['close'])
+
+	const handleClose = () => {
+		if (overlayClosable) {
+			emit("close")
+		}
+	}
+</script>
+
+<style lang="scss">
+	$popupCls: 'triones-antm-popup';
+
+	.#{$popupCls} {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		&-mask {
+			height: 100%;
+			width: 100%;
+			background-color: rgba(0, 0, 0, .55);
+		}
+
+		&-close {
+			position: absolute;
+			right: 10Px;
+			top: 10Px;
+		}
+
+		&-body {
+			background-color: white;
+
+			position: fixed;
+		}
+
+		&-top {
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+
+		&-bottom {
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+
+		&-left {
+			left: 0;
+			top: 0;
+			bottom: 0;
+		}
+
+		&-right {
+			right: 0;
+			top: 0;
+			bottom: 0;
+		}
+	}
+</style>

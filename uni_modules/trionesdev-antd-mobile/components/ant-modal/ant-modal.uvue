@@ -1,0 +1,16 @@
+<template>
+	<view>
+		<slot></slot>
+	</view>
+</template>
+
+<script setup>
+	
+	const show=()=>{}
+	
+	defineExpose()
+</script>
+
+<style>
+
+</style>

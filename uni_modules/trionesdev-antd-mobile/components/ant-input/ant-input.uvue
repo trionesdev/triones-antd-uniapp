@@ -1,25 +1,15 @@
 <template>
-	<view class="">
+	<view :class="[`${inputCls}`]">
 		<input />
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				
-			}
-		},
-		methods: {
-			
-		}
-	}
+<script setup>
+	const inputCls = "triones-antm-input";
 </script>
 
 <style lang="scss">
-$inputCls:'triones-antm-input';
-.#{$inputCls}{
-	
-}
+	$inputCls: 'triones-antm-input';
+
+	.#{$inputCls} {}
 </style>
