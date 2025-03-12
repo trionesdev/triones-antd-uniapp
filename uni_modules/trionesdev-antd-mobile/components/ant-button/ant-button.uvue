@@ -5,7 +5,7 @@
 			[`${clsPrefix}-block`]:block,
 			[`${clsPrefix}-color-${finalColor}`]:finalColor,
 			[`${clsPrefix}-variant-${finalVariant}`]:finalVariant,
-		}]" :disabled="disabled">
+		}]" :disabled="disabled" @tap="handleClick">
 		<slot></slot>
 	</button>
 </template>
@@ -52,6 +52,7 @@
 	})
 
 
+
 	const finalColor = computed(() => {
 		let finalColor : any = color
 		if (type) {
@@ -84,6 +85,11 @@
 		}
 		return finalVariant;
 	});
+
+	const emit = defineEmits(["click"])
+	const handleClick = () => {
+		emit("click")
+	}
 </script>
 
 <style lang="scss">
