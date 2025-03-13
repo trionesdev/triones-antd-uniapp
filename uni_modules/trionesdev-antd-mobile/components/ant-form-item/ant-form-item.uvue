@@ -1,13 +1,71 @@
 <template>
-	<view>
-		
+	<view :class="[`${formItemCls}`,{
+		[`${formItemCls}-horizontal`]:(itemLayout=='horizontal'),
+		[`${formItemCls}-vertical`]:(itemLayout=='vertical'),
+	}]">
+		<view v-if="label" :class="[`${formItemCls}-label`]"> <view v-if="required" :class="[`${formItemCls}-required`]">*&nbsp;</view> {{label}}</view>
+		<view>
+			<slot></slot>
+		</view>
 	</view>
 </template>
 
 <script setup>
+	const formItemCls = "triones-antm-form-item";
+	const model = defineModel( );
+	const { label, name,required, layout,rules } = defineProps({
+		label: {
+			type: String
+		},
+		name: {
+			type: [String, Array]
+		},
+		required:{
+			type: Boolean
+		},
+		layout: {
+			type: String,
+			validator(value) {
+				return ["horizontal", "vertical"].includes(value);
+			}
+		},
+		rules:{
+			type: Array
+		}
+	});
 
+	const itemLayout = computed(() => {
+		return layout ?? inject("formLayout");
+	})
+	
+	onMounted(()=>{
+		inject("registerItem")?.({name:name,rules})
+	});
+	
 </script>
 
-<style>
+<style lang="scss">
+	$formItemCls: 'triones-antm-form-item';
 
+	.#{$formItemCls} {
+		display: flex;
+
+		&-horizontal {
+			flex-direction: row;
+		}
+
+		&-vertical {
+			flex-direction: column;
+		}
+		
+		
+		&-label{
+			flex-direction: row;
+		}
+		
+		&-required{
+			display: inline-flex;
+			color: red;
+		}
+	}
 </style>

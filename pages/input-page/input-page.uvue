@@ -2,23 +2,19 @@
 	<!-- #ifdef APP -->
 	<scroll-view style="flex:1">
 	<!-- #endif -->
-		
+		<demo-block title="基本使用">
+			<view>文本输入</view>
+			<ant-input />
+			<view>数字输入</view>
+			<ant-input type="number" />
+		</demo-block>
 	<!-- #ifdef APP -->
 	</scroll-view>
 	<!-- #endif -->
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				
-			}
-		},
-		methods: {
-			
-		}
-	}
+<script setup>
+
 </script>
 
 <style>

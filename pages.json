@@ -10,35 +10,42 @@
 			"path" : "pages/button-page/button-page",
 			"style" : 
 			{
-				"navigationBarTitleText" : "Button"
+				"navigationBarTitleText" : "Button 按钮"
 			}
 		},
 		{
 			"path" : "pages/input-page/input-page",
 			"style" : 
 			{
-				"navigationBarTitleText" : ""
+				"navigationBarTitleText" : "Input 输入框"
 			}
 		},
 		{
 			"path" : "pages/modal-page/modal-page",
 			"style" : 
 			{
-				"navigationBarTitleText" : "Modal"
+				"navigationBarTitleText" : "Modal 模态框"
 			}
 		},
 		{
 			"path" : "pages/popup-page/popup-page",
 			"style" : 
 			{
-				"navigationBarTitleText" : "Popup"
+				"navigationBarTitleText" : "Popup 弹窗"
 			}
 		},
 		{
 			"path" : "pages/space-page/space-page",
 			"style" : 
 			{
-				"navigationBarTitleText" : "间距"
+				"navigationBarTitleText" : "Space 间距"
+			}
+		},
+		{
+			"path" : "pages/from-page/from-page",
+			"style" : 
+			{
+				"navigationBarTitleText" : "Form 表单"
 			}
 		}
 	],

@@ -1,15 +1,15 @@
 <template>
 	<view>
 		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
 		<view style="display: inline-flex;gap: 8px;">
 			<navigator url="/pages/button-page/button-page"><button size="mini">Button</button></navigator>
 			<navigator url="/pages/input-page/input-page"><button size="mini">Input</button></navigator>
 			<navigator url="/pages/popup-page/popup-page"><button size="mini">Popup</button></navigator>
 			<navigator url="/pages/modal-page/modal-page"><button size="mini">Modal</button></navigator>
 			<navigator url="/pages/space-page/space-page"><button size="mini">Space</button></navigator>
+			<navigator url="/pages/space-page/space-page"><button size="mini">Space</button></navigator>
+			<navigator url="/pages/from-page/from-page"><button size="mini">Form</button></navigator>
+	
 		</view>
 	</view>
 </template>
@@ -36,7 +36,7 @@
 	.logo {
 		height: 100px;
 		width: 100px;
-		margin: 100px auto 25px auto;
+		margin: 25px auto 25px auto;
 	}
 
 	.title {

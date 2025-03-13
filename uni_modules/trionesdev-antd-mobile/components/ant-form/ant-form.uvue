@@ -1,13 +1,44 @@
 <template>
-	<view>
-		
-	</view>
+	<form :class="[`${formCls}`,`${formCls}-${layout}`]">
+		<slot></slot>
+	</form>
 </template>
 
-<script setup>
+<script setup lang="uts">
+	const formCls = 'triones-antm-form';
+	const value = defineModel();
+	const { layout } = defineProps({
+		layout: {
+			type: String,
+			default: 'horizontal',
+			validator(value) {
+				return ['horizontal', 'vertical'].includes(value)
+			}
+		}
+	});
 
+	const registerItem = (itemInfo) => {
+		console.log(itemInfo)
+	}
+
+	provide('formLayout', layout)
+	provide('registerItem',registerItem)
+	
+	const validateFields=()=>{
+		console.log("validateFields")
+	}
+	
+	defineExpose({
+		validateFields
+	})
 </script>
 
-<style>
+<style lang="scss">
+	$formCls: 'triones-antm-form';
 
+	.#{$formCls} {
+		&-horizontal {}
+
+		&-vertical {}
+	}
 </style>

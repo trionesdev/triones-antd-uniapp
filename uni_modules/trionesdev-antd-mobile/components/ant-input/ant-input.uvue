@@ -1,11 +1,21 @@
 <template>
 	<view :class="[`${inputCls}`]">
-		<input />
+		<input v-model="value" :type="type"/>
 	</view>
 </template>
 
 <script setup>
 	const inputCls = "triones-antm-input";
+	const value = defineModel();
+	const {type} = defineProps({
+		type:{
+			type:String,
+			default:'text',
+			validator(value){
+				return ['text','number','digit','tel'].includes(value)
+			}
+		}
+	});
 </script>
 
 <style lang="scss">

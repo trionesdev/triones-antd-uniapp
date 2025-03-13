@@ -1,0 +1,33 @@
+<template>
+	<!-- #ifdef APP -->
+	<scroll-view style="flex:1">
+	<!-- #endif -->
+
+		<demo-block title="基本使用">
+			<ant-form ref="formRef" v-model="formValues">
+				<ant-form-item label="姓名" :required="true">
+					<ant-input v-model="formValues.name"></ant-input>
+				</ant-form-item>
+			</ant-form>
+			<ant-button @click="handleSubmit">提交</ant-button>
+		</demo-block>
+
+	<!-- #ifdef APP -->
+	</scroll-view>
+	<!-- #endif -->
+</template>
+
+<script setup>
+	const formRef = ref<any>(null)
+	const formValues = reactive({
+		"name": "name"
+	})
+
+	const handleSubmit = () => {
+		formRef.value!.validateFields()
+	}
+</script>
+
+<style>
+
+</style>
