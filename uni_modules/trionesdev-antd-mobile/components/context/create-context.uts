@@ -1,8 +1,8 @@
 class Context{
-	private  internalValue:any;
+	private  internalValue:any = reactive({});
 	
 	constructor(value){
-		this.internalValue= value
+		this.internalValue = reactive(value)
 	}
 	
 	
