@@ -1,0 +1,61 @@
+<template>
+	<!-- #ifdef APP -->
+	<scroll-view style="flex:1">
+	<!-- #endif -->
+		<demo-block title="基本使用">
+			<ant-space>
+				<ant-button type="primary">按钮</ant-button>
+				<ant-button>按钮</ant-button>
+				<ant-button>按钮</ant-button>
+				<ant-button>按钮</ant-button>
+			</ant-space>
+		</demo-block>
+		<demo-block title="纵向排列">
+			<ant-space direction="vertical">
+				<ant-button>按钮</ant-button>
+				<ant-button>按钮</ant-button>
+				<ant-button>按钮</ant-button>
+				<ant-button>按钮</ant-button>
+			</ant-space>
+		</demo-block>
+		<demo-block title="间距大小">
+			<view :style="{gap:'4px'}">
+				<ant-space size="small">
+					<ant-button>按钮</ant-button>
+					<ant-button>按钮</ant-button>
+					<ant-button>按钮</ant-button>
+					<ant-button>按钮</ant-button>
+				</ant-space>
+
+				<ant-space size="middle">
+					<ant-button>按钮</ant-button>
+					<ant-button>按钮</ant-button>
+					<ant-button>按钮</ant-button>
+					<ant-button>按钮</ant-button>
+				</ant-space>
+				<ant-space size="large">
+					<ant-button>按钮</ant-button>
+					<ant-button>按钮</ant-button>
+					<ant-button>按钮</ant-button>
+					<ant-button>按钮</ant-button>
+				</ant-space>
+				<ant-space :size="4">
+					<ant-button>按钮</ant-button>
+					<ant-button>按钮</ant-button>
+					<ant-button>按钮</ant-button>
+					<ant-button>按钮</ant-button>
+				</ant-space>
+			</view>
+		</demo-block>
+	<!-- #ifdef APP -->
+	</scroll-view>
+	<!-- #endif -->
+</template>
+
+<script setup>
+
+</script>
+
+<style>
+
+</style>

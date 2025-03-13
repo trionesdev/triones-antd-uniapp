@@ -33,6 +33,13 @@
 			{
 				"navigationBarTitleText" : "Popup"
 			}
+		},
+		{
+			"path" : "pages/space-page/space-page",
+			"style" : 
+			{
+				"navigationBarTitleText" : "间距"
+			}
 		}
 	],
 

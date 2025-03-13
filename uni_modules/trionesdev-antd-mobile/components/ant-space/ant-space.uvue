@@ -1,0 +1,65 @@
+<template>
+	<view :class="[`${spaceCls}`,{
+		[`${spaceCls}-${direction}`]:direction
+	}]" :style="{'gap':gap}">
+		<slot></slot>
+	</view>
+</template>
+
+<script setup>
+	const spaceCls = 'triones-antm-space';
+	const { direction, size } = defineProps({
+		direction: {
+			type: String,
+			default: 'horizontal',
+			validator(value) {
+				return ['horizontal', 'vertical'].includes(value)
+			}
+		},
+		size: {
+			type: [String, Number],
+			default: 'small',
+			validator(value) {
+				if (!value) {
+					return true;
+				}
+
+				if (typeof value == "string") {
+					return ['small', 'middle', 'large'].includes(value)
+				} else if (typeof value == 'number') {
+					return true
+				} else {
+					return false
+				}
+			}
+		}
+	})
+
+	const gap = computed(() => {
+		switch (size) {
+			case "small":
+				return "8px";
+			case "middle":
+				return "16px";
+			case "large":
+				return "24px";
+			default:
+				return `${size}px`;
+		}
+	})
+</script>
+
+<style lang="scss">
+	$spaceCls: 'triones-antm-space';
+
+	.#{$spaceCls} {
+		display: flex;
+
+		&-horizontal {
+			flex-direction: row;
+		}
+
+		&-vertical {}
+
+	}
+</style>

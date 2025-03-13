@@ -9,6 +9,7 @@
 			<navigator url="/pages/input-page/input-page"><button size="mini">Input</button></navigator>
 			<navigator url="/pages/popup-page/popup-page"><button size="mini">Popup</button></navigator>
 			<navigator url="/pages/modal-page/modal-page"><button size="mini">Modal</button></navigator>
+			<navigator url="/pages/space-page/space-page"><button size="mini">Space</button></navigator>
 		</view>
 	</view>
 </template>
