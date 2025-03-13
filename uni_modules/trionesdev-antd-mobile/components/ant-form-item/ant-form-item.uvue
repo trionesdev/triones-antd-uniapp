@@ -11,6 +11,9 @@
 </template>
 
 <script setup>
+import { formContext } from '../ant-form/context';
+import { useContext } from '../context/create-context';
+
 	const formItemCls = "triones-antm-form-item";
 	const model = defineModel( );
 	const { label, name,required, layout,rules } = defineProps({
@@ -38,9 +41,17 @@
 		return layout ?? inject("formLayout");
 	})
 	
+	const {layout:sss} = useContext(formContext);
+	
+	console.log("ssssssssssss",sss)
 	onMounted(()=>{
-		inject("registerItem")?.({name:name,rules})
+		
+		// inject("registerItem")?.(getCurrentInstance())
 	});
+	
+	const validate=()=>{
+		console.log("")
+	}
 	
 </script>
 

@@ -5,6 +5,8 @@
 </template>
 
 <script setup lang="uts">
+import { formContext } from './context';
+
 	const formCls = 'triones-antm-form';
 	const value = defineModel();
 	const { layout } = defineProps({
@@ -17,8 +19,12 @@
 		}
 	});
 
-	const registerItem = (itemInfo) => {
-		console.log(itemInfo)
+	const rulesMap = reactive({});
+
+	const registerItem = (item) => {
+		console.log(item)
+		// console.log(item.rules)
+		
 	}
 
 	provide('formLayout', layout)
@@ -27,6 +33,12 @@
 	const validateFields=()=>{
 		console.log("validateFields")
 	}
+	
+	onLoad(()=>{
+		formContext.provider({
+			layout: "ssss"
+		});
+	});
 	
 	defineExpose({
 		validateFields

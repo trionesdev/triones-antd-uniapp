@@ -1,0 +1,29 @@
+class Context{
+	private  internalValue:any;
+	
+	constructor(value){
+		this.internalValue= value
+	}
+	
+	
+	provider(){
+		
+	}
+	
+	getContext(){}
+};
+
+export function createContext(value:any):any{
+	const context = new Context(value);
+
+	
+	return context;
+}
+
+
+
+
+
+export function useContext(context:any){
+	return context?.getContext()
+}
