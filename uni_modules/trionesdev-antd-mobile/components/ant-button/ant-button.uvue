@@ -122,13 +122,6 @@
 			filter: brightness(92%);
 		}
 
-		&[disabled] {
-			opacity: 0.4;
-
-			&:active {
-				filter: none;
-			}
-		}
 
 		&-color {
 			&-default {

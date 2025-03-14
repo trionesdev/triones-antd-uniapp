@@ -5,7 +5,8 @@
 </template>
 
 <script setup lang="uts">
-import { formContext } from './context';
+	import { formContext } from './context';
+	import Schema from "async-validator";
 
 	const formCls = 'triones-antm-form';
 	const value = defineModel();
@@ -24,22 +25,24 @@ import { formContext } from './context';
 	const registerItem = (item) => {
 		console.log(item)
 		// console.log(item.rules)
-		
+
 	}
 
-	provide('formLayout', layout)
-	provide('registerItem',registerItem)
-	
-	const validateFields=()=>{
+	const validateFields = () => {
 		console.log("validateFields")
-	}
-	
-	onLoad(()=>{
-		formContext.provider({
-			layout: "ssss"
+		const validator = new Schema({ "name": [{ required: true }], "age": [{ required: true, min: 10 }] });
+		validator.validate({ "name": "" }).then(() => { }).catch(({ errors, fields }) => {
+			console.log(errors, fields)
 		});
+	}
+
+	onLoad(() => {
 	});
-	
+
+
+
+	formContext.provider({ "formLayout": layout })
+
 	defineExpose({
 		validateFields
 	})

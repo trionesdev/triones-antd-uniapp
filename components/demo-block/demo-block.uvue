@@ -5,23 +5,12 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		name:'DemoBlock',
-		data() {
-			return {
-				
-			}
-		},
-		props:{
-			title:{
-				type:String
-			}
-		},
-		methods: {
-			
+<script setup lang="uts">
+	const {title} = defineProps({
+		title:{
+			type:String
 		}
-	}
+	})
 </script>
 
 <style lang="scss">

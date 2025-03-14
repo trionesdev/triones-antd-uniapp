@@ -1,3 +1,10 @@
 import { createContext } from "../context/create-context";
 
-export const formContext = createContext({});
+type FormContextType ={
+	formLayout ?: string,
+	registerFormItem ?: (item : any) => void
+}
+
+export const formContext = createContext<FormContextType>({
+	formLayout: null
+});

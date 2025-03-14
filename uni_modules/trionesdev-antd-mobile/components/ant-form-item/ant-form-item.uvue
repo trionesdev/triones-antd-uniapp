@@ -3,7 +3,9 @@
 		[`${formItemCls}-horizontal`]:(itemLayout=='horizontal'),
 		[`${formItemCls}-vertical`]:(itemLayout=='vertical'),
 	}]">
-		<view v-if="label" :class="[`${formItemCls}-label`]"> <view v-if="required" :class="[`${formItemCls}-required`]">*&nbsp;</view> {{label}}</view>
+		<view v-if="label" :class="[`${formItemCls}-label`]">
+			<view v-if="required" :class="[`${formItemCls}-required`]">*</view> {{label}}
+		</view>
 		<view>
 			<slot></slot>
 		</view>
@@ -11,19 +13,20 @@
 </template>
 
 <script setup>
-import { formContext } from '../ant-form/context';
-import { useContext } from '../context/create-context';
-
+	import { formContext } from '../ant-form/context';
+	import { useContext } from '../context/create-context';
+	const { formLayout } = useContext(formContext);
+	
 	const formItemCls = "triones-antm-form-item";
-	const model = defineModel( );
-	const { label, name,required, layout,rules } = defineProps({
+	const model = defineModel();
+	const { label, name, required, layout, rules } = defineProps({
 		label: {
 			type: String
 		},
 		name: {
 			type: [String, Array]
 		},
-		required:{
+		required: {
 			type: Boolean
 		},
 		layout: {
@@ -32,27 +35,19 @@ import { useContext } from '../context/create-context';
 				return ["horizontal", "vertical"].includes(value);
 			}
 		},
-		rules:{
+		rules: {
 			type: Array
 		}
 	});
 
 	const itemLayout = computed(() => {
-		return layout ?? inject("formLayout");
+		return layout ?? formLayout;
 	})
-	
-	const {layout:sss} = useContext(formContext);
-	
-	console.log("ssssssssssss",sss)
-	onMounted(()=>{
-		
-		// inject("registerItem")?.(getCurrentInstance())
+
+	onMounted(() => {
+
 	});
-	
-	const validate=()=>{
-		console.log("")
-	}
-	
+
 </script>
 
 <style lang="scss">
@@ -68,15 +63,16 @@ import { useContext } from '../context/create-context';
 		&-vertical {
 			flex-direction: column;
 		}
-		
-		
-		&-label{
+
+
+		&-label {
 			flex-direction: row;
 		}
-		
-		&-required{
+
+		&-required {
 			display: inline-flex;
 			color: red;
+			margin-right: 4px;
 		}
 	}
 </style>
