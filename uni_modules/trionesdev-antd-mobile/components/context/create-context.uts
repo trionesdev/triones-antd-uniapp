@@ -1,4 +1,4 @@
-
+import * as _ from "lodash"
 
 class Context<T>{
 
@@ -12,7 +12,7 @@ class Context<T>{
 
 
 	provider(value : T) {
-		this.internalValue = value
+		this.internalValue = _.assign(this.defaultValue,value)
 	}
 
 	getContext() : T {
